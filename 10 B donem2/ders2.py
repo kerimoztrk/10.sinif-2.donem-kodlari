@@ -298,3 +298,85 @@
 #     else:
 #         print("Geçersiz giriş yapıldı dikkat edin")
 
+
+
+# GÖmülü fonksiyonlar 
+
+#print kullanımı: ekrana yazı yazdırmak için kullanılır.
+# print("merhaba")
+
+# len kullanımı: Bir dizinin veya stringin uzunlugunu verir.
+
+# metin="Python1233"
+# print(len(metin))
+
+#type kullanımı: Bir değişkenin veri tipini döndürür . Örn(str,int,char,double)
+
+# ornek=20
+# ornek2=10.23
+# ornek3="onbir"
+
+
+# print(type(ornek))
+# print(type(ornek2))
+# print(type(ornek3))
+
+
+#abs kullanımı: Bir sayının mutlak değierni verir
+
+# negatifSayi= -166
+# pozitifSayi= 1212312
+
+# print(abs(negatifSayi))
+# print(abs(pozitifSayi))
+
+
+#sum kullanımı : Bir liste veya demet içerisindeki sayıları toplar.
+
+# sayilar13= [10,20,30,40,50,]
+# print(sum(sayilar13))
+
+
+# # math kütüphanesi yada modülü kullanımı ( mataematiksel işlemler için)
+# import math
+
+# print(math.sqrt(25))
+# print(math.factorial(6))
+
+
+
+#random modülü : Rastgele sayı üretmek için kullnaılır.
+
+# import random
+# print(random.randint(1,10)) # 1 ile 10 arasında rasgele bir sayi
+
+
+#datetime Modülü: tarih ve saat bilgisi yazdırı.
+
+# import datetime
+# bugun=datetime.date.today()
+# print(bugun)
+
+#os modülü (dosya ve diziin işlemleri için kullanılır.)
+
+# import os
+# print(os.getcwd()) #geçerli çalışma dizninii göseteri
+
+
+#örnekler
+
+# def merhaba10b():
+#     print("merhsbs dünya")
+
+# merhaba10b()
+
+
+# def carpma(a,b):
+#     return f" Sonuc: {a}x{b}={a*b}"
+# print(carpma(6,9))
+
+
+#lambda Fonksiyonlar
+
+kup = lambda x:x**3
+print(f"4ün küpü {kup(4)}")
