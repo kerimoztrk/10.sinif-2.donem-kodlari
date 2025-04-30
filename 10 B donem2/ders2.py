@@ -149,7 +149,7 @@
 # sayi=1
 
 # while sayi <= 5:
-#     print(sayi)
+#     print(sayi**2)
 #     sayi += 1
 
 
@@ -378,5 +378,339 @@
 
 #lambda Fonksiyonlar
 
-kup = lambda x:x**3
-print(f"4ün küpü {kup(4)}")
+# kup = lambda x:x**3
+# print(f"4ün küpü {kup(4)}")
+
+
+# 2.dönem 1. sınav sonu
+
+
+
+# Tarih ve string metin işlemleri
+
+#pythonda  tarih saaat bilgileri ile çalımak için datetime modulü kullanılır.
+
+
+#Tarih ve saat bilgisi alma
+
+import datetime
+
+# simdi=datetime.datetime.now()
+
+# print("Şuanki tarih ve saat:",simdi)
+
+
+#datetime.datetime.now() fonksiyonu, sistemin o anki tarih ve saat bilgisini döndürür.
+
+
+#Belirli bir Tarih tanımlama
+
+
+# tarih=datetime.datetime(2015,3,15,14,30)
+
+# print("Tanımlanan tarih ve saat: ", tarih)
+
+
+#String (Metin) olarak girilen değerlerin tarih bilgisinin biçimlendirilmesi
+
+#Tarihi metinden dönültürme(strpTime())
+
+#Bir metin(string) olarak girilen tarih, strptime() fonksiyonu ile datetime nesnesine dönüştürülebilir.
+
+# tarih_metin="11/03/2024 13:56"
+
+# tarih_nesnesi= datetime.datetime.strptime(tarih_metin,"%d/%m/%Y %H:%M")
+
+# print("Donuşstürülen değer:",tarih_nesnesi)
+
+
+#  %d   ifadesi Gün değerini ifade eder
+
+#  %m  ifadesi Ay değerini ifade eder
+
+#  %Y  ifadesi Yıl değerini ifade eder
+
+#  %H  ifadesi Saat değerini ifade eder
+
+#  %M   ifadesi Dakika değerini ifade eder.
+
+
+#Tarihi metin olarak formatlama (strftime)
+
+#bir datetime nesnesini metibsel olarak belirli bir formatta yazırdırmak iöçin kullanılır.
+
+
+# simdi2=datetime.datetime.now()
+
+# tarih_metinsel=simdi2.strftime("%d %B %Y , %A")
+
+# print("biçimlendirilmiş tarih",tarih_metinsel)
+
+#  %d   ifadesi Gün değerini ifade eder
+
+#  %B   ifadesi ayın adını ifade eder
+
+#  %Y  ifadesi Yıl değerini ifade eder
+
+#  %A  ifadesi günün adını verir ( Salı ) gibi
+
+
+# String verileri Birleştirme
+
+#+ operatörü .format() ve f-string yontemi kllanılır.
+
+
+
+#1 Birleştirme örenği + kullnaarak
+
+# ad= "Elif"
+# soyad="Öztürk"
+
+# tamAd= ad + " " + soyad
+
+# print(tamAd)
+
+#f-string yöntemi 
+
+# ad1="Mert"
+# yas=18
+
+# print(f"{ad1} adlı kişi {yas} yaşındadır.")
+
+
+#.format() yöntemi ile birleştirme
+
+# okul= "Yazılım Lisesi"
+# sehir= "İstanbul"
+
+# print(" Okul : {}, Şehir :{}".format(okul,sehir))
+
+
+
+#String veri içerisindeki bir karaktere erişme
+
+# isim = "Ayşe"
+ 
+# print(isim[0])  # 'A'
+
+# print(isim[2])  # 'ş'
+
+
+# Sondan erişim(negatif indeks(dizin) )
+
+# isim2="Kemal"
+
+# print(isim2[-1])
+
+# print(isim2[-3])
+
+## örnek
+
+# email= "213124@gmail.com" 
+
+# if "@" in email:
+#     print("Geçerli Bir eposta adresi girildi")
+# else:
+#     print("geçersiz eposta")
+
+
+# isim="Fırat"
+# soyadı="küçük"
+
+# tamAd=isim+" "+soyadı
+# print("Tam Ad: ",tamAd)
+
+# ilkHarf=isim[0]
+# print("Adının ilk harfi:",ilkHarf)
+
+# ogrenciEtiketi=f"{ilkHarf}.{soyadı}"
+# print("Etiket:",ogrenciEtiketi)
+
+
+#Strin verinin uzunlugu
+
+# Bir string ifadenin uzunlugu yani kaç karakterden oluştuğunu öğrenmek için len() fonksiyonunu kullanıyoruz
+
+
+# mesaj= "Merhaba Dünya "
+
+# uzunluk= len(mesaj)
+
+# print("Mesaj Uzunluğu =", uzunluk)
+
+
+
+#sTring Veriyi Paraçamala (slice) ve bölne(split)
+
+
+#bir stringin belirli kısmını almak için kullanılır : metin[başlangıç:Bitiş]
+
+
+# metin="Python programlama"
+
+# parca=metin[0:6]
+
+# print(parca)
+
+
+# #Split(Bölme)
+
+# #Belirli ayırıcılara göre parçalara ayırmak için split kullanılır   split("ayırıxı")
+
+
+# ad_Soyad="Ali.Veli.Demir"
+
+# liste=ad_Soyad.split(".") #Nokta ifadadelerine göre ayırır.
+
+# print(liste)
+
+
+# #String veri içinde kararkter değiştirme, ekleme ,ve çıkarm
+
+
+# #replace() metodu karakter değiştirme işlemine yarar
+
+# # metin2="Merhaba Dunya"
+
+# # metin2=metin2.replace("u","ü")
+
+# # print(metin2)
+
+# #replace( ) ifadesi ile bir karakter veya kelime başka bir şeyle yer değiştirebilir.
+
+
+# #karakter ekleme 
+
+# #stringler değiştirelemez old için yeni bir string oluşturarark ifade eklenir.
+
+# kelime="Kitap"
+
+# kelime=kelime+"lık"  #kitaplık
+
+# print(kelime)
+
+
+
+#karakter çıkarma 
+
+# metin3="2023-10-29"
+
+# yeniMetin=metin3.replace("-","")
+
+# print(yeniMetin)
+
+
+
+#Senaryo Kullanıcıdan alınan ad soyad bilgisini işleyip temizleme
+
+#uzunluk ölçümü
+#ismini ve soyisimni ayırma
+#küçük hharfle yazılmış olan soyadını büyük harfe çevire
+#gereksiz boşluk dtemizleme
+
+
+
+
+# veri="   Ayşe Yıldız  "
+
+# veri=veri.strip() #baştaki ve sondaki boşlukları temizleme
+
+# print("Uzunluk:",len(veri))
+
+# #bölme örneği
+
+# ad,soyad=veri.split()
+# soyad=soyad.upper() #büyük harfe çevirir.
+
+# print(f"Ad:{ad},  Soyad:{soyad}")
+
+
+
+
+
+# String veri içinde Bir karakterin yerini veya 
+# metnin karakteri içerip içermedğini bulma    KONU
+
+
+# metin="Python programlama"
+
+# print(" ython " in metin)
+
+# print("java" in metin)
+
+# in operatörü ile bir kelime yada karakterin string içinde olup olmadığını hzılıca kontrol ediyoruz.
+
+
+
+#find() metodu -  Bir karakterin Yerini bulmak
+
+
+# metin2="Merhaba Dünya"
+
+# print(metin2.find("a"))
+# print(metin2.find("z"))
+# print(metin2.find("x"))
+
+
+#ornek
+
+
+# email=input("Eposta adresi giriniz:")
+
+# if "@" in email:
+#     print("Geçerli bir eposta adresi girdiniz.")
+# else:
+#     print("Geçersiz bir eposta girdiniz içerisinde @ karakteri yoktur.")
+
+
+
+#String ver ile büyük ve küçük harf değişimi Yapma
+
+#lower() fonksiyonu = tüm harfleri küçük yapmaya yarar.
+
+
+# metin3= "Python ÖĞreniyorum"
+
+# kucuk= metin3.lower()
+
+# print(kucuk)
+
+
+# #upper()  fonsiyonu - Tüm harfleri büyük harfle yazar.
+
+# metin4= " nazmi şen"
+# buyuk=metin4.upper()
+
+# print(buyuk)
+
+
+#örnek kullanıcadan gelen veriyi standartlaştırma
+
+# sehir= input("Lütfen ŞEhrin adını giriniz:")
+# sehir=sehir.upper()
+# print(f"Kayıt edilen şehrin adı: {sehir}")
+
+
+
+email=input("Eposta adresi giriniz:")
+sehir= input("Yaşadığınız şehri giriniz:")
+
+
+#epostayı kontrol et @ ifadesi varmı ykmu
+if "@" in email:
+    print("Geçerli bir eposta adresi girdiniz.")
+else:
+    print("Geçersiz bir eposta girdiniz içerisinde @ karakteri yoktur.")
+
+index=email.find("@")
+
+if index != -1:
+    print(f"'@' karakteri {index}. sırada yer alıyor.")
+
+else:
+    print("Eposta içerisinde '@' ifadesi bulunamadı.")
+
+sehir_buyuk=sehir.upper()
+print(f"Kayıt edilen şehir adı : {sehir_buyuk}")
+
+
