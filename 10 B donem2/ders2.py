@@ -692,25 +692,113 @@ import datetime
 
 
 
-email=input("Eposta adresi giriniz:")
-sehir= input("Yaşadığınız şehri giriniz:")
+# email=input("Eposta adresi giriniz:")
+# sehir= input("Yaşadığınız şehri giriniz:")
 
 
-#epostayı kontrol et @ ifadesi varmı ykmu
-if "@" in email:
-    print("Geçerli bir eposta adresi girdiniz.")
-else:
-    print("Geçersiz bir eposta girdiniz içerisinde @ karakteri yoktur.")
+# #epostayı kontrol et @ ifadesi varmı ykmu
+# if "@" in email:
+#     print("Geçerli bir eposta adresi girdiniz.")
+# else:
+#     print("Geçersiz bir eposta girdiniz içerisinde @ karakteri yoktur.")
 
-index=email.find("@")
+# index=email.find("@")
 
-if index != -1:
-    print(f"'@' karakteri {index}. sırada yer alıyor.")
+# if index != -1:
+#     print(f"'@' karakteri {index}. sırada yer alıyor.")
 
-else:
-    print("Eposta içerisinde '@' ifadesi bulunamadı.")
+# else:
+#     print("Eposta içerisinde '@' ifadesi bulunamadı.")
 
-sehir_buyuk=sehir.upper()
-print(f"Kayıt edilen şehir adı : {sehir_buyuk}")
+# sehir_buyuk=sehir.upper()
+# print(f"Kayıt edilen şehir adı : {sehir_buyuk}")
 
 
+#HATA YAKALAMA İŞLEMLERİ
+
+
+#Hata kavramı ve hata türleri
+
+
+
+#Hata nedir ?
+
+#Pythonda program çalışırken oluşan  beklenmedik sorunlara hata (error) denir.
+#Hatalar, programın durmasına vehya çalışmasına neden olabilir.
+#
+# Bazı hatalar program yazılıreken (söz dizimi yani  syntax hataları) , bazıları ise çalışırken çalışma zamanı hataları) olabilir.
+
+
+#hata Türleri
+
+# 1.hATA ( SYNTAXeRRO))- yAZIM hATASI == KODLAMA KURALLARINA UYULMAZSA OLUŞUR
+
+#PARANTEZİN EKSİK OLMASI SYNTAX HATASI MEYDANA GETİRİR.
+
+# print("MRHABA DÜNYA"
+
+
+#2. HATA Türü (Name Error)- Tanımsız değişken
+#Bu hata türü tanımlanmamış bir değişkene erişilmek istenirse meydana gelir.
+
+
+# print(sayi32)
+
+# 3.hata Türü TypeError- Tip hatası = Uyumsuz veri tipleriyle işlem yapılırsa olulşur.
+
+# print("Yaşınız :"+25) #Typeerror : str ile int toplanmaz dolayısıyla runtime hatası verir.
+
+# Value Error - Geçersiz değeer
+#uygun veri tipinde ancak geçersiz bir değer verilirse oluşur.
+
+# sayi=int("on") #valueError : "on" metnini sayıya dönüştürremez.
+
+
+# # ZeroDivisionError - Sıfıra bölme hatasıı
+
+# print(19/0)
+
+
+try:
+    a=int (input("Birinci Sayıyı giriniz:"))
+    b=int (input("ikinci Sayıyı giriniz:"))
+
+    sonuc=a/b
+    print("Sonuc: ",sonuc)
+
+except ValueError:
+    print("Lütfen sadece sayısal değer girn")
+except ZeroDivisionError:
+    print("Bir sayı sıfıra bölünemez")
+except Exception as e:
+    print("Beklenmyen bir hata meydana geldi")
+
+
+#try: Hata oluşabilecek kodların yazıldığı blok.
+
+#except Hata olışursa devreye giren blok.
+
+#valueError: Sayıya dönüştürülmeyen girişler için hata .
+
+#ZeroDivisionError: 0 bölme hatası sayı sıfıra bölünemez.
+
+#exception: Diğer tüm beklenmeten hatalar için genel blok.
+
+try: 
+    adet=int(input("Kaç adet ürün aldınız:"))
+    fiyat=int(input("Fiyatını giriniz"))
+
+    if fiyat<=0:
+        raise ValueError("Ürüm fiyatı 0 dan küçük olamaz")
+    
+    toplam=adet*fiyat
+    print(f"Toplam Tutar : {toplam} TL")
+
+except ValueError as hata :
+    print("Hatalı giriş",hata)
+
+except Exception as e:
+    print("Beklenmeyen bir hata oluştu",e)
+
+
+#raise ValueError : Bizim manuel olarak hata fırlatmamıza yarar.
